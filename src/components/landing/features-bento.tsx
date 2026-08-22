@@ -168,7 +168,7 @@ const COPY = {
     title: "Sharp tool for the streets.",
     f1: { title: "No-joke scoring", body: "Ten questions, seven areas. No be vibes." },
     f2: { title: "Street pulse", body: "See if your take match the crowd or you dey lone wolf." },
-    f3: { title: "Two modes, one record", body: "Taxpayer dey formal. Cruise dey real. Same ten questions." },
+    f3: { title: "Two modes, one record", body: "Taxpayer dey formal. Agbado Cruise dey real. Same ten questions." },
     cardShare: { title: "Your NGSC card", body: "Grade, score, full breakdon. Drop am, make dem see." },
     f5: { title: "Who dey lead", body: "Who rise. Who fall. Live update." },
     f6: { title: "Open your mouth", body: "Talk am after you score. Voice to text dey come soon." },
@@ -271,7 +271,7 @@ export function FeaturesBento() {
             </div>
             <div className="mt-3 flex gap-2">
               <Chip className="bg-forest-tint border-forest-500 text-forest-700">Taxpayer</Chip>
-              <Chip className="bg-cruise-tint border-cruise-500 text-cruise-700">Cruise</Chip>
+              <Chip className="bg-cruise-tint border-cruise-500 text-cruise-700">Agbado Cruise</Chip>
             </div>
             <div className="mt-3 border-t border-line pt-3">
               <h3 className="font-semibold text-ink text-[14px]">{c.f3.title}</h3>
