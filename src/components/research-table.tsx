@@ -58,7 +58,7 @@ export function ResearchTable() {
     <div>
       <div className="flex items-center justify-between border-b border-line pb-4">
         <p className="text-[13px] text-ink-muted">
-          {PREVIEW_COUNT} of {rows.length} officials shown
+          Showing {PREVIEW_COUNT} preview rows
         </p>
         <button
           onClick={() => setShowPaywall(true)}
@@ -135,10 +135,10 @@ export function ResearchTable() {
               <Lock size={20} className="text-ink-muted" />
             </div>
             <p className="mt-3 text-[15px] font-semibold text-ink">
-              {lockedCount} more officials locked
+              Full dataset locked
             </p>
             <p className="mt-1.5 text-[13px] leading-relaxed text-ink-muted">
-              The full dataset includes all {rows.length} officials with complete scores, category breakdowns, and CSV export. Used by journalists, analysts, and civil society researchers.
+              The full register includes all tracked officials with complete scores, category breakdowns, and CSV export. Used by journalists, analysts, and civil society researchers.
             </p>
 
             {/* Pricing */}
