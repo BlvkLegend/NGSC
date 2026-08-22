@@ -100,7 +100,6 @@ export function HowItWorks() {
           <div className="mt-3 flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-2">
             <Search size={12} className="shrink-0 text-ink-muted/60" />
             <span className="flex-1 text-[11px] text-ink-muted">{c.find.placeholder}</span>
-            <span className="w-[1.5px] h-3 rounded-full bg-forest-500 animate-pulse" />
           </div>
           {/* Suggestion chips */}
           <div className="mt-2 flex flex-col gap-1">
