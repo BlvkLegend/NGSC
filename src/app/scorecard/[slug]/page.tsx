@@ -1,4 +1,3 @@
-// "use client" is handled by children
 // Server page wrapper
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
