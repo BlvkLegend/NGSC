@@ -248,10 +248,9 @@ export function LeadersUnified() {
 
         {/* Results count */}
         <p className="text-[12px] text-ink-muted">
-          {ranked.length} {ranked.length === 1 ? "official" : "officials"}
-          {officeFilter !== "All" ? ` · ${officeFilter}` : ""}
+          {officeFilter !== "All" ? `${officeFilter}` : "All officials"}
           {query ? ` matching "${query}"` : ""}
-          {" "}· {rankCategory.toLowerCase()}
+          {" "}· ranked by {rankCategory.toLowerCase()}
         </p>
       </div>
     </div>
