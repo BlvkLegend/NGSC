@@ -20,24 +20,24 @@ const GRADE_SCALE = [
 ];
 
 const ANSWER_SCALE = [
-  { label: "A", display: "Excellent",  helper: "Consistent, well-documented delivery",    gradient: "linear-gradient(135deg, #0a2e22 0%, #167a4a 55%, #1d5c38 100%)" },
-  { label: "B", display: "Good",       helper: "Clear, verifiable progress",              gradient: "linear-gradient(135deg, #0e5236 0%, #3fae74 55%, #1d8050 100%)" },
-  { label: "C", display: "Average",    helper: "Some progress, significant gaps remain",  gradient: "linear-gradient(135deg, #4a3800 0%, #8a6d1f 55%, #c9a23f 100%)" },
-  { label: "D", display: "Poor",       helper: "Minimal, inconsistent progress",          gradient: "linear-gradient(135deg, #5c2e00 0%, #b8590a 55%, #d9720f 100%)" },
-  { label: "F", display: "Fail",       helper: "No credible evidence of progress",        gradient: "linear-gradient(135deg, #4a0e0e 0%, #9c3b30 55%, #c04040 100%)" },
+  { label: "A", display: "Excellent",  cruiseDisplay: "Sharp Sharp",  helper: "Consistent, well-documented delivery",    cruiseHelper: "This leader dey deliver. No dulling at all.", gradient: "linear-gradient(135deg, #0a2e22 0%, #167a4a 55%, #1d5c38 100%)" },
+  { label: "B", display: "Good",       cruiseDisplay: "E Do Well",    helper: "Clear, verifiable progress",              cruiseHelper: "Progress dey show. You fit see am.", gradient: "linear-gradient(135deg, #0e5236 0%, #3fae74 55%, #1d8050 100%)" },
+  { label: "C", display: "Average",    cruiseDisplay: "Half Half",    helper: "Some progress, significant gaps remain",  cruiseHelper: "E try small but gap still plenty plenty.", gradient: "linear-gradient(135deg, #4a3800 0%, #8a6d1f 55%, #c9a23f 100%)" },
+  { label: "D", display: "Poor",       cruiseDisplay: "E No Do",      helper: "Minimal, inconsistent progress",          cruiseHelper: "Small small movement. E no reach anywhere.", gradient: "linear-gradient(135deg, #5c2e00 0%, #b8590a 55%, #d9720f 100%)" },
+  { label: "F", display: "Fail",       cruiseDisplay: "Total Failure", helper: "No credible evidence of progress",       cruiseHelper: "Zero. Nothing. The person just dey collect salary.", gradient: "linear-gradient(135deg, #4a0e0e 0%, #9c3b30 55%, #c04040 100%)" },
 ];
 
 const CATEGORIES = [
-  { icon: <Building2 size={16} />,    label: "Infrastructure",  q: "Visible infrastructure delivered this term?" },
-  { icon: <Eye size={16} />,          label: "Transparency",    q: "Budgets and records citizens can verify?" },
-  { icon: <ShieldAlert size={16} />,  label: "Security",        q: "Has safety meaningfully improved?" },
-  { icon: <HeartPulse size={16} />,   label: "Healthcare",      q: "Access to functioning public healthcare?" },
-  { icon: <GraduationCap size={16} />,label: "Education",       q: "Condition of public schools this term?" },
-  { icon: <Zap size={16} />,          label: "Power Supply",    q: "Consistency of electricity supply?" },
-  { icon: <Briefcase size={16} />,    label: "Job Creation",    q: "Verifiable employment beyond announcements?" },
-  { icon: <TrendingDown size={16} />, label: "Economy",         q: "Affordability of basic goods changed?" },
-  { icon: <Users size={16} />,        label: "Responsiveness",  q: "Accessible and responsive to constituents?" },
-  { icon: <Scale size={16} />,        label: "Accountability",  q: "Scrutiny or consequences for failures?" },
+  { icon: <Building2 size={16} />,     label: "Infrastructure",  q: "Visible infrastructure delivered this term?",          cruiseQ: "Road, bridge, water supply don reach your area?" },
+  { icon: <Eye size={16} />,           label: "Transparency",    q: "Budgets and records citizens can verify?",              cruiseQ: "Where the money go? Can ordinary person check am?" },
+  { icon: <ShieldAlert size={16} />,   label: "Security",        q: "Has safety meaningfully improved?",                     cruiseQ: "You fit waka night market without looking back?" },
+  { icon: <HeartPulse size={16} />,    label: "Healthcare",      q: "Access to functioning public healthcare?",               cruiseQ: "Government hospital na real clinic or just a building with sign?" },
+  { icon: <GraduationCap size={16} />, label: "Education",       q: "Condition of public schools this term?",                 cruiseQ: "Public school pickin dey learn or na holiday every week?" },
+  { icon: <Zap size={16} />,           label: "Power Supply",    q: "Consistency of electricity supply?",                    cruiseQ: "Light don show for your area or inverter remain your best friend?" },
+  { icon: <Briefcase size={16} />,     label: "Job Creation",    q: "Verifiable employment beyond announcements?",            cruiseQ: "Dem announce 10,000 jobs. You know anybody wey actually get?" },
+  { icon: <TrendingDown size={16} />,  label: "Economy",         q: "Affordability of basic goods changed?",                 cruiseQ: "You fit enter market with small money and comot with something?" },
+  { icon: <Users size={16} />,         label: "Responsiveness",  q: "Accessible and responsive to constituents?",             cruiseQ: "How many gates and redirections before you give up?" },
+  { icon: <Scale size={16} />,         label: "Accountability",  q: "Scrutiny or consequences for failures?",                cruiseQ: "Dem mess up public funds. Wetin happen to them? You know the answer." },
 ];
 
 const BRACKETS = [
@@ -115,7 +115,7 @@ export default function MethodologyPage() {
                 </div>
                 <div>
                   <p className="text-[13px] font-semibold text-ink">{cat.label}</p>
-                  <p className="mt-0.5 text-[12px] text-ink-muted">{cat.q}</p>
+                  <p className="mt-0.5 text-[12px] text-ink-muted">{mode === "cruise" ? cat.cruiseQ : cat.q}</p>
                 </div>
               </motion.div>
             ))}
@@ -149,8 +149,8 @@ export default function MethodologyPage() {
                   {opt.label}
                 </span>
                 <div>
-                  <p className="text-[13px] font-semibold text-ink">{opt.display}</p>
-                  <p className="mt-0.5 text-[11px] text-ink-muted">{opt.helper}</p>
+                  <p className="text-[13px] font-semibold text-ink">{mode === "cruise" ? opt.cruiseDisplay : opt.display}</p>
+                  <p className="mt-0.5 text-[11px] text-ink-muted">{mode === "cruise" ? opt.cruiseHelper : opt.helper}</p>
                 </div>
               </div>
             ))}
