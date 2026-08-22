@@ -32,8 +32,15 @@ export function Hero() {
           style={{
             background:
               "linear-gradient(to right, var(--paper) 0%, var(--paper) 28%, color-mix(in srgb, var(--paper) 65%, transparent) 52%, transparent 72%), " +
-              "linear-gradient(to top, var(--paper) 0%, transparent 30%), " +
-              "linear-gradient(to bottom, color-mix(in srgb, var(--paper) 40%, transparent) 0%, transparent 18%)",
+              "linear-gradient(to top, var(--paper) 0%, transparent 35%), " +
+              "linear-gradient(to bottom, color-mix(in srgb, var(--paper) 70%, transparent) 0%, transparent 22%)",
+          }}
+        />
+        {/* Extra mobile overlay: covers full width at sm and below so text is always legible */}
+        <div
+          className="absolute inset-0 sm:hidden"
+          style={{
+            background: "linear-gradient(to bottom, color-mix(in srgb, var(--paper) 80%, transparent) 0%, color-mix(in srgb, var(--paper) 70%, transparent) 60%, var(--paper) 100%)",
           }}
         />
       </div>
@@ -123,15 +130,16 @@ export function Hero() {
               />
             </div>
 
-            {/* Text column - liquid-crystal surface, always mode-aware ink so it's never dark-on-dark */}
             <div className="relative flex flex-1 flex-col justify-center gap-1 bg-paper-raised px-4 py-3">
               <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-              {mode === "taxpayer" && (
-                <span className="absolute right-3 top-3 rounded-full bg-forest-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white shadow">
-                  Active
-                </span>
-              )}
-              <h3 className="text-[16px] font-bold leading-tight text-ink sm:text-[17px]">Taxpayer Mode</h3>
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-[16px] font-bold leading-tight text-ink sm:text-[17px]">Taxpayer Mode</h3>
+                {mode === "taxpayer" && (
+                  <span className="shrink-0 rounded-full bg-forest-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white shadow">
+                    Active
+                  </span>
+                )}
+              </div>
               <p className="text-[12.5px] leading-snug text-ink-muted">
                 Clear English. Formal and factual.
               </p>
@@ -168,12 +176,14 @@ export function Hero() {
 
             <div className="relative flex flex-1 flex-col justify-center gap-1 bg-paper-raised px-4 py-3">
               <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-              {mode === "cruise" && (
-                <span className="absolute right-3 top-3 rounded-full bg-cruise-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white shadow">
-                  Active
-                </span>
-              )}
-              <h3 className="text-[16px] font-bold leading-tight text-ink sm:text-[17px]">Agbado Cruise Mode</h3>
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-[16px] font-bold leading-tight text-ink sm:text-[17px]">Agbado Cruise Mode</h3>
+                {mode === "cruise" && (
+                  <span className="shrink-0 rounded-full bg-cruise-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white shadow">
+                    Active
+                  </span>
+                )}
+              </div>
               <p className="text-[12.5px] leading-snug text-ink-muted">
                 Agbado Cruise, not just cruise.
               </p>
