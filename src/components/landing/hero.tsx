@@ -112,78 +112,79 @@ export function Hero() {
         )}
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {/* TAXPAYER — always light, preview of taxpayer surface */}
+          {/* TAXPAYER — always light, green accents */}
           <button
             onClick={() => setMode("taxpayer")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
-              mode === "taxpayer" ? "border-forest-500" : "border-line hover:border-forest-400"
+              mode === "taxpayer" ? "border-[#167a4a]" : "border-[#d4d4d8] hover:border-[#167a4a]/60"
             }`}
           >
             <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#f4f4f5] sm:w-36">
-              <img
-                src={TAXPAYER_PHOTO}
-                alt=""
-                aria-hidden
+              {/* Green tint strip at top */}
+              <div className="absolute inset-x-0 top-0 h-1 bg-[#167a4a]" />
+              <img src={TAXPAYER_PHOTO} alt="" aria-hidden
                 className="absolute inset-0 h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                loading="lazy"
-              />
+                loading="lazy" />
             </div>
             <div className="relative flex flex-1 flex-col justify-between bg-[#f4f4f5] px-4 py-3">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[15px] font-bold leading-tight text-[#0a0a0b]">Taxpayer Mode</h3>
+              <div className="absolute inset-x-0 top-0 h-1 bg-[#167a4a]" />
+              <div className="flex items-start justify-between gap-2 pt-1">
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#167a4a]">Taxpayer Mode</p>
+                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#0a0a0b]">Formal. Data-driven.</h3>
+                </div>
                 {mode === "taxpayer" && (
-                  <span className="shrink-0 rounded-full bg-forest-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white">
+                  <span className="shrink-0 rounded-full bg-[#167a4a] px-2 py-0.5 text-[9px] font-bold uppercase text-white">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[12px] leading-snug text-[#6b6b7a]">
-                Clear English. Formal civic record.
+              <p className="text-[11.5px] italic leading-snug text-[#6b6b7a]">
+                &ldquo;A structured verdict. On record. Permanently.&rdquo;
               </p>
-              <div className="flex gap-1">
-                {["A", "B", "C", "D", "F"].map((g) => (
-                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-[#d4d4d8] font-mono text-[9px] font-bold text-[#6b6b7a]">
-                    {g}
-                  </span>
-                ))}
+              <div className="flex items-center gap-1.5">
+                <div className="h-1.5 flex-1 rounded-full bg-[#167a4a]/20">
+                  <div className="h-full w-3/5 rounded-full bg-[#167a4a]" />
+                </div>
+                <span className="font-mono text-[9px] text-[#167a4a]">A–F scale</span>
               </div>
             </div>
           </button>
 
-          {/* AGBADO CRUISE — always dark, preview of cruise surface */}
+          {/* AGBADO CRUISE — always dark, orange accents */}
           <button
             onClick={() => setMode("cruise")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
-              mode === "cruise" ? "border-cruise-500" : "border-line hover:border-cruise-500/60"
+              mode === "cruise" ? "border-[#ff9d3d]" : "border-[#32333a] hover:border-[#ff9d3d]/60"
             }`}
           >
             <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#08090a] sm:w-36">
-              <img
-                src={CRUISE_PHOTO}
-                alt=""
-                aria-hidden
+              <div className="absolute inset-x-0 top-0 h-1 bg-[#ff9d3d]" />
+              <img src={CRUISE_PHOTO} alt="" aria-hidden
                 className="absolute inset-0 h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                loading="lazy"
-              />
+                loading="lazy" />
             </div>
             <div className="relative flex flex-1 flex-col justify-between bg-[#08090a] px-4 py-3">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[15px] font-bold leading-tight text-[#f4f4f5]">Agbado Cruise</h3>
+              <div className="absolute inset-x-0 top-0 h-1 bg-[#ff9d3d]" />
+              <div className="flex items-start justify-between gap-2 pt-1">
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#ff9d3d]">Agbado Cruise</p>
+                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#f4f4f5]">Sharp. No filter.</h3>
+                </div>
                 {mode === "cruise" && (
-                  <span className="shrink-0 rounded-full bg-cruise-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white">
+                  <span className="shrink-0 rounded-full bg-[#ff9d3d] px-2 py-0.5 text-[9px] font-bold uppercase text-[#08090a]">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[12px] leading-snug text-[#a8a9b0]">
-                Sharp Pidgin. Real street energy.
+              <p className="text-[11.5px] italic leading-snug text-[#a8a9b0]">
+                &ldquo;Where the money go? Why dem dey act like na crime to ask?&rdquo;
               </p>
-              <div className="flex gap-1">
-                {["A", "B", "C", "D", "F"].map((g) => (
-                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-[#32333a] font-mono text-[9px] font-bold text-[#a8a9b0]">
-                    {g}
-                  </span>
-                ))}
+              <div className="flex items-center gap-1.5">
+                <div className="h-1.5 flex-1 rounded-full bg-[#ff9d3d]/20">
+                  <div className="h-full w-3/5 rounded-full bg-[#ff9d3d]" />
+                </div>
+                <span className="font-mono text-[9px] text-[#ff9d3d]">A–F scale</span>
               </div>
             </div>
           </button>
