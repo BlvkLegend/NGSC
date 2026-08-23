@@ -10,6 +10,7 @@ import { ArrowRight,
   GraduationCap, Zap, Briefcase, TrendingDown, Users, Scale,
 } from "lucide-react";
 import { useMode } from "@/lib/mode-context";
+import { asset } from "@/lib/asset";
 
 const GRADE_SCALE = [
   { grade: "A", meaning: "Excellent",      range: "80 to 100", color: "text-signal-good border-signal-good", bg: "bg-[#e7efe6] dark:bg-[#0d2218]", textClass: "text-[#1a2e1a] dark:text-[#b8dcc8]" },
@@ -20,11 +21,11 @@ const GRADE_SCALE = [
 ];
 
 const ANSWER_SCALE = [
-  { label: "A", display: "Excellent",  cruiseDisplay: "Sharp Sharp",  helper: "Consistent, well-documented delivery",    cruiseHelper: "This leader dey deliver. No dulling at all.", gradient: "linear-gradient(135deg, #0a2e22 0%, #167a4a 55%, #1d5c38 100%)" },
-  { label: "B", display: "Good",       cruiseDisplay: "E Do Well",    helper: "Clear, verifiable progress",              cruiseHelper: "Progress dey show. You fit see am.", gradient: "linear-gradient(135deg, #0e5236 0%, #3fae74 55%, #1d8050 100%)" },
-  { label: "C", display: "Average",    cruiseDisplay: "Half Half",    helper: "Some progress, significant gaps remain",  cruiseHelper: "E try small but gap still plenty plenty.", gradient: "linear-gradient(135deg, #4a3800 0%, #8a6d1f 55%, #c9a23f 100%)" },
-  { label: "D", display: "Poor",       cruiseDisplay: "E No Do",      helper: "Minimal, inconsistent progress",          cruiseHelper: "Small small movement. E no reach anywhere.", gradient: "linear-gradient(135deg, #5c2e00 0%, #b8590a 55%, #d9720f 100%)" },
-  { label: "F", display: "Fail",       cruiseDisplay: "Total Failure", helper: "No credible evidence of progress",       cruiseHelper: "Zero. Nothing. The person just dey collect salary.", gradient: "linear-gradient(135deg, #4a0e0e 0%, #9c3b30 55%, #c04040 100%)" },
+  { label: "A", display: "Excellent",  cruiseDisplay: "Sharp Sharp",   helper: "Consistent, well-documented delivery",   cruiseHelper: "Oga dey deliver. No dulling.",     gradient: "linear-gradient(135deg, #0a2e22 0%, #167a4a 55%, #1d5c38 100%)" },
+  { label: "B", display: "Good",       cruiseDisplay: "E Do Well",     helper: "Clear, verifiable progress",             cruiseHelper: "Progress dey show. You fit see.", gradient: "linear-gradient(135deg, #0e5236 0%, #3fae74 55%, #1d8050 100%)" },
+  { label: "C", display: "Average",    cruiseDisplay: "Half Half",     helper: "Some progress, significant gaps remain", cruiseHelper: "E try small. Gap still plenty.",  gradient: "linear-gradient(135deg, #4a3800 0%, #8a6d1f 55%, #c9a23f 100%)" },
+  { label: "D", display: "Poor",       cruiseDisplay: "E No Do",       helper: "Minimal, inconsistent progress",         cruiseHelper: "Small movement. No reach far.",   gradient: "linear-gradient(135deg, #5c2e00 0%, #b8590a 55%, #d9720f 100%)" },
+  { label: "F", display: "Fail",       cruiseDisplay: "Total Failure", helper: "No credible evidence of progress",      cruiseHelper: "Zero. Person just dey collect.",  gradient: "linear-gradient(135deg, #4a0e0e 0%, #9c3b30 55%, #c04040 100%)" },
 ];
 
 const CATEGORIES = [
@@ -56,7 +57,7 @@ export default function MethodologyPage() {
       {/* FULL-BLEED HERO - -mt-16 pulls behind sticky nav */}
       <div className="relative -mt-16 min-h-[62vh] w-full overflow-hidden">
         <img
-          src="/how-it-works-hero.webp"
+          src={asset("/how-it-works-hero.webp")}
           alt=""
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover object-center"
