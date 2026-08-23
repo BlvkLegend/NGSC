@@ -119,8 +119,7 @@ export function Hero() {
               mode === "taxpayer" ? "border-forest-500" : "border-line hover:border-forest-400"
             }`}
           >
-            {/* Image tile */}
-            <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36" style={{ background: "#efe7da" }}>
+            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-paper-raised sm:w-36">
               <img
                 src={TAXPAYER_PHOTO}
                 alt=""
@@ -129,7 +128,6 @@ export function Hero() {
                 loading="lazy"
               />
             </div>
-            {/* Text column */}
             <div className="relative flex flex-1 flex-col justify-between bg-paper-raised px-4 py-3">
               <div className="flex items-start justify-between gap-2">
                 <h3 className="text-[15px] font-bold leading-tight text-ink">Taxpayer Mode</h3>
@@ -144,10 +142,7 @@ export function Hero() {
               </p>
               <div className="flex gap-1">
                 {["A", "B", "C", "D", "F"].map((g) => (
-                  <span
-                    key={g}
-                    className="flex h-5 w-5 items-center justify-center rounded border border-line-strong font-mono text-[9px] font-bold text-ink-muted"
-                  >
+                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-line-strong font-mono text-[9px] font-bold text-ink-muted">
                     {g}
                   </span>
                 ))}
@@ -162,10 +157,7 @@ export function Hero() {
               mode === "cruise" ? "border-cruise-500" : "border-line hover:border-cruise-500/60"
             }`}
           >
-            {/* Image tile — dark with orange accent matching cruise-500 */}
-            <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36" style={{ background: "#1a0800" }}>
-              {/* Orange glow strip at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-10 opacity-40" style={{ background: "linear-gradient(to top, #ff9d3d, transparent)" }} />
+            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-paper-raised sm:w-36">
               <img
                 src={CRUISE_PHOTO}
                 alt=""
@@ -174,7 +166,6 @@ export function Hero() {
                 loading="lazy"
               />
             </div>
-            {/* Text column */}
             <div className="relative flex flex-1 flex-col justify-between bg-paper-raised px-4 py-3">
               <div className="flex items-start justify-between gap-2">
                 <h3 className="text-[15px] font-bold leading-tight text-ink">Agbado Cruise</h3>
@@ -189,10 +180,7 @@ export function Hero() {
               </p>
               <div className="flex gap-1">
                 {["A", "B", "C", "D", "F"].map((g) => (
-                  <span
-                    key={g}
-                    className="flex h-5 w-5 items-center justify-center rounded border border-cruise-500/40 font-mono text-[9px] font-bold text-cruise-500"
-                  >
+                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-line-strong font-mono text-[9px] font-bold text-ink-muted">
                     {g}
                   </span>
                 ))}
