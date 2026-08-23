@@ -104,7 +104,7 @@ export function Hero() {
 
         <div className="grid gap-3 sm:grid-cols-2">
 
-          {/* ── TAXPAYER — white/light background, green accents ── */}
+         {/* ── TAXPAYER — white/light background, green accents ── */}
           <button
             onClick={() => setMode("taxpayer")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
@@ -113,32 +113,42 @@ export function Hero() {
           >
             <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#f4f4f5] sm:w-36">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#167a4a]" />
-              <img src={TAXPAYER_PHOTO} alt="" aria-hidden
+              <img
+                src={TAXPAYER_PHOTO}
+                alt=""
+                aria-hidden
                 className="absolute inset-0 h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                loading="lazy" />
+                loading="lazy"
+              />
             </div>
+          
             <div className="relative flex flex-1 flex-col justify-between bg-[#f4f4f5] px-4 py-3">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#167a4a]" />
+          
               <div className="flex items-start justify-between gap-2 pt-1">
                 <div>
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#167a4a]">Taxpayer Mode</p>
-                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#0a0a0b]">Formal. Data-driven.</h3>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#167a4a]">
+                    Taxpayer Mode
+                  </p>
                 </div>
+          
                 {mode === "taxpayer" && (
                   <span className="shrink-0 rounded-full bg-[#167a4a] px-2 py-0.5 text-[9px] font-bold uppercase text-white">
                     Active
                   </span>
                 )}
               </div>
+          
               <p className="text-[11.5px] italic leading-snug text-[#6b6b7a]">
-                &ldquo;A structured verdict. On record. Permanently.&rdquo;
+                &ldquo;A formal assessment, for those who prefer the public forgets.&rdquo;
               </p>
-              <p className="text-[10px] font-medium text-[#167a4a] leading-tight">
-                Factual. Permanent. Quietly devastating.
+          
+              <p className="text-[10px] font-medium leading-tight text-[#167a4a]">
+                Editorial satire, institutional.
               </p>
             </div>
           </button>
-
+          
           {/* ── AGBADO CRUISE MODE — black background, orange accents ── */}
           <button
             onClick={() => setMode("cruise")}
@@ -148,32 +158,41 @@ export function Hero() {
           >
             <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#08090a] sm:w-36">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff9d3d]" />
-              <img src={CRUISE_PHOTO} alt="" aria-hidden
+              <img
+                src={CRUISE_PHOTO}
+                alt=""
+                aria-hidden
                 className="absolute inset-0 h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-                loading="lazy" />
+                loading="lazy"
+              />
             </div>
+          
             <div className="relative flex flex-1 flex-col justify-between bg-[#08090a] px-4 py-3">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff9d3d]" />
+          
               <div className="flex items-start justify-between gap-2 pt-1">
                 <div>
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#ff9d3d]">Agbado Cruise Mode</p>
-                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#f4f4f5]">Sharp. No filter.</h3>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#ff9d3d]">
+                    Agbado Cruise Mode
+                  </p>
                 </div>
+          
                 {mode === "cruise" && (
                   <span className="shrink-0 rounded-full bg-[#ff9d3d] px-2 py-0.5 text-[9px] font-bold uppercase text-[#08090a]">
                     Active
                   </span>
                 )}
               </div>
+          
               <p className="text-[11.5px] italic leading-snug text-[#a8a9b0]">
-                &ldquo;Where the money go? Why dem dey act like na crime to ask?&rdquo;
+                &ldquo;Make we write am down, for those wey hope say we go forget.&rdquo;
               </p>
-              <p className="text-[10px] font-medium text-[#ff9d3d] leading-tight">
-                Your oga can run. He no fit hide from ten questions.
+          
+              <p className="text-[10px] font-medium leading-tight text-[#ff9d3d]">
+                Conversational Naija slang-heavy.
               </p>
             </div>
           </button>
-
         </div>
       </motion.div>
     </section>
