@@ -112,14 +112,14 @@ export function Hero() {
         )}
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {/* TAXPAYER */}
+          {/* TAXPAYER — always light, preview of taxpayer surface */}
           <button
             onClick={() => setMode("taxpayer")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
               mode === "taxpayer" ? "border-forest-500" : "border-line hover:border-forest-400"
             }`}
           >
-            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-paper-raised sm:w-36">
+            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#f4f4f5] sm:w-36">
               <img
                 src={TAXPAYER_PHOTO}
                 alt=""
@@ -128,21 +128,21 @@ export function Hero() {
                 loading="lazy"
               />
             </div>
-            <div className="relative flex flex-1 flex-col justify-between bg-paper-raised px-4 py-3">
+            <div className="relative flex flex-1 flex-col justify-between bg-[#f4f4f5] px-4 py-3">
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[15px] font-bold leading-tight text-ink">Taxpayer Mode</h3>
+                <h3 className="text-[15px] font-bold leading-tight text-[#0a0a0b]">Taxpayer Mode</h3>
                 {mode === "taxpayer" && (
                   <span className="shrink-0 rounded-full bg-forest-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[12px] leading-snug text-ink-muted">
+              <p className="text-[12px] leading-snug text-[#6b6b7a]">
                 Clear English. Formal civic record.
               </p>
               <div className="flex gap-1">
                 {["A", "B", "C", "D", "F"].map((g) => (
-                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-line-strong font-mono text-[9px] font-bold text-ink-muted">
+                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-[#d4d4d8] font-mono text-[9px] font-bold text-[#6b6b7a]">
                     {g}
                   </span>
                 ))}
@@ -150,14 +150,14 @@ export function Hero() {
             </div>
           </button>
 
-          {/* AGBADO CRUISE */}
+          {/* AGBADO CRUISE — always dark, preview of cruise surface */}
           <button
             onClick={() => setMode("cruise")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
               mode === "cruise" ? "border-cruise-500" : "border-line hover:border-cruise-500/60"
             }`}
           >
-            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-paper-raised sm:w-36">
+            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#08090a] sm:w-36">
               <img
                 src={CRUISE_PHOTO}
                 alt=""
@@ -166,21 +166,21 @@ export function Hero() {
                 loading="lazy"
               />
             </div>
-            <div className="relative flex flex-1 flex-col justify-between bg-paper-raised px-4 py-3">
+            <div className="relative flex flex-1 flex-col justify-between bg-[#08090a] px-4 py-3">
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[15px] font-bold leading-tight text-ink">Agbado Cruise</h3>
+                <h3 className="text-[15px] font-bold leading-tight text-[#f4f4f5]">Agbado Cruise</h3>
                 {mode === "cruise" && (
                   <span className="shrink-0 rounded-full bg-cruise-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[12px] leading-snug text-ink-muted">
+              <p className="text-[12px] leading-snug text-[#a8a9b0]">
                 Sharp Pidgin. Real street energy.
               </p>
               <div className="flex gap-1">
                 {["A", "B", "C", "D", "F"].map((g) => (
-                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-line-strong font-mono text-[9px] font-bold text-ink-muted">
+                  <span key={g} className="flex h-5 w-5 items-center justify-center rounded border border-[#32333a] font-mono text-[9px] font-bold text-[#a8a9b0]">
                     {g}
                   </span>
                 ))}
