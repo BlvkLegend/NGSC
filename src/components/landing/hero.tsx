@@ -112,14 +112,14 @@ export function Hero() {
         )}
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {/* TAXPAYER - horizontal split: image column (full height) + text column */}
+          {/* TAXPAYER */}
           <button
             onClick={() => setMode("taxpayer")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
               mode === "taxpayer" ? "border-forest-500" : "border-line hover:border-forest-400"
             }`}
           >
-            {/* Image column - fixed light neutral tile so the illustration always reads, in both modes */}
+            {/* Image tile */}
             <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36" style={{ background: "#efe7da" }}>
               <img
                 src={TAXPAYER_PHOTO}
@@ -129,21 +129,20 @@ export function Hero() {
                 loading="lazy"
               />
             </div>
-
-            <div className="relative flex flex-1 flex-col justify-center gap-1 bg-paper-raised px-4 py-3">
-              <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+            {/* Text column */}
+            <div className="relative flex flex-1 flex-col justify-between bg-paper-raised px-4 py-3">
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[16px] font-bold leading-tight text-ink sm:text-[17px]">Taxpayer Mode</h3>
+                <h3 className="text-[15px] font-bold leading-tight text-ink">Taxpayer Mode</h3>
                 {mode === "taxpayer" && (
-                  <span className="shrink-0 rounded-full bg-forest-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white shadow">
+                  <span className="shrink-0 rounded-full bg-forest-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[12.5px] leading-snug text-ink-muted">
-                Clear English. Formal and factual.
+              <p className="text-[12px] leading-snug text-ink-muted">
+                Clear English. Formal civic record.
               </p>
-              <div className="mt-1.5 flex gap-1">
+              <div className="flex gap-1">
                 {["A", "B", "C", "D", "F"].map((g) => (
                   <span
                     key={g}
@@ -156,15 +155,17 @@ export function Hero() {
             </div>
           </button>
 
-          {/* CRUISE - horizontal split: image column (full height) + text column */}
+          {/* AGBADO CRUISE */}
           <button
             onClick={() => setMode("cruise")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
               mode === "cruise" ? "border-cruise-500" : "border-line hover:border-cruise-500/60"
             }`}
           >
-            {/* Image column - fixed light neutral tile so the illustration always reads, in both modes */}
-            <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36" style={{ background: "#fdeee0" }}>
+            {/* Image tile — dark with orange accent matching cruise-500 */}
+            <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36" style={{ background: "#1a0800" }}>
+              {/* Orange glow strip at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-10 opacity-40" style={{ background: "linear-gradient(to top, #ff9d3d, transparent)" }} />
               <img
                 src={CRUISE_PHOTO}
                 alt=""
@@ -173,23 +174,29 @@ export function Hero() {
                 loading="lazy"
               />
             </div>
-
-            <div className="relative flex flex-1 flex-col justify-center gap-1 bg-paper-raised px-4 py-3">
-              <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+            {/* Text column */}
+            <div className="relative flex flex-1 flex-col justify-between bg-paper-raised px-4 py-3">
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-[16px] font-bold leading-tight text-ink sm:text-[17px]">Agbado Cruise Mode</h3>
+                <h3 className="text-[15px] font-bold leading-tight text-ink">Agbado Cruise</h3>
                 {mode === "cruise" && (
-                  <span className="shrink-0 rounded-full bg-cruise-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white shadow">
+                  <span className="shrink-0 rounded-full bg-cruise-500 px-2 py-0.5 text-[9px] font-bold uppercase text-white">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[12.5px] leading-snug text-ink-muted">
-                Agbado Cruise, not just cruise.
+              <p className="text-[12px] leading-snug text-ink-muted">
+                Sharp Pidgin. Real street energy.
               </p>
-              <p className="mt-1.5 text-[11px] italic text-ink-muted/80">
-                &ldquo;Where the money go? Why dem dey act like na crime to ask?&rdquo;
-              </p>
+              <div className="flex gap-1">
+                {["A", "B", "C", "D", "F"].map((g) => (
+                  <span
+                    key={g}
+                    className="flex h-5 w-5 items-center justify-center rounded border border-cruise-500/40 font-mono text-[9px] font-bold text-cruise-500"
+                  >
+                    {g}
+                  </span>
+                ))}
+              </div>
             </div>
           </button>
         </div>
