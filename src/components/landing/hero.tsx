@@ -104,29 +104,25 @@ export function Hero() {
 
         <div className="grid gap-3 sm:grid-cols-2">
 
-          {/* ── TAXPAYER ── sage-green tinted card */}
+          {/* ── TAXPAYER — white/light background, green accents ── */}
           <button
             onClick={() => setMode("taxpayer")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
-              mode === "taxpayer" ? "border-[#167a4a]" : "border-[#b6d9c5] hover:border-[#167a4a]/70"
+              mode === "taxpayer" ? "border-[#167a4a]" : "border-[#d4d4d8] hover:border-[#167a4a]/60"
             }`}
           >
-            {/* Photo column — mint-green tint */}
-            <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36"
-              style={{ background: "linear-gradient(135deg, #d4ede0 0%, #eaf5ee 100%)" }}>
+            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#f4f4f5] sm:w-36">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#167a4a]" />
               <img src={TAXPAYER_PHOTO} alt="" aria-hidden
                 className="absolute inset-0 h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
                 loading="lazy" />
             </div>
-            {/* Content column — slightly warmer light green */}
-            <div className="relative flex flex-1 flex-col justify-between px-4 py-3"
-              style={{ background: "linear-gradient(135deg, #eaf5ee 0%, #f2faf5 100%)" }}>
+            <div className="relative flex flex-1 flex-col justify-between bg-[#f4f4f5] px-4 py-3">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#167a4a]" />
               <div className="flex items-start justify-between gap-2 pt-1">
                 <div>
                   <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#167a4a]">Taxpayer Mode</p>
-                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#0a2e1a]">Formal. Data-driven.</h3>
+                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#0a0a0b]">Formal. Data-driven.</h3>
                 </div>
                 {mode === "taxpayer" && (
                   <span className="shrink-0 rounded-full bg-[#167a4a] px-2 py-0.5 text-[9px] font-bold uppercase text-white">
@@ -134,54 +130,45 @@ export function Hero() {
                   </span>
                 )}
               </div>
-              <p className="text-[11.5px] italic leading-snug text-[#2d6b46]">
+              <p className="text-[11.5px] italic leading-snug text-[#6b6b7a]">
                 &ldquo;A structured verdict. On record. Permanently.&rdquo;
               </p>
-              {/* Satirical tagline — taxpayer */}
-              <p className="text-[10px] font-medium text-[#167a4a]/80 leading-tight">
+              <p className="text-[10px] font-medium text-[#167a4a] leading-tight">
                 Factual. Permanent. Quietly devastating.
               </p>
             </div>
           </button>
 
-          {/* ── AGBADO CRUISE MODE ── dark amber-tinted card */}
+          {/* ── AGBADO CRUISE MODE — black background, orange accents ── */}
           <button
             onClick={() => setMode("cruise")}
             className={`group relative flex h-36 overflow-hidden rounded-2xl border-2 text-left transition-all sm:h-40 ${
-              mode === "cruise" ? "border-[#ff9d3d]" : "border-[#4a3010] hover:border-[#ff9d3d]/60"
+              mode === "cruise" ? "border-[#ff9d3d]" : "border-[#32333a] hover:border-[#ff9d3d]/60"
             }`}
           >
-            {/* Photo column — deep amber-tinted dark */}
-            <div className="relative h-full w-28 shrink-0 overflow-hidden sm:w-36"
-              style={{ background: "linear-gradient(135deg, #1a0f00 0%, #2e1d00 100%)" }}>
+            <div className="relative h-full w-28 shrink-0 overflow-hidden bg-[#08090a] sm:w-36">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff9d3d]" />
-              {/* subtle glow behind photo */}
-              <div className="absolute inset-0 opacity-30"
-                style={{ background: "radial-gradient(ellipse at 50% 90%, #ff9d3d 0%, transparent 70%)" }} />
               <img src={CRUISE_PHOTO} alt="" aria-hidden
                 className="absolute inset-0 h-full w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
                 loading="lazy" />
             </div>
-            {/* Content column — warm dark */}
-            <div className="relative flex flex-1 flex-col justify-between px-4 py-3"
-              style={{ background: "linear-gradient(135deg, #110900 0%, #1e1100 100%)" }}>
+            <div className="relative flex flex-1 flex-col justify-between bg-[#08090a] px-4 py-3">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff9d3d]" />
               <div className="flex items-start justify-between gap-2 pt-1">
                 <div>
                   <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#ff9d3d]">Agbado Cruise Mode</p>
-                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#fde8c8]">Sharp. No filter.</h3>
+                  <h3 className="mt-0.5 text-[15px] font-bold leading-tight text-[#f4f4f5]">Sharp. No filter.</h3>
                 </div>
                 {mode === "cruise" && (
-                  <span className="shrink-0 rounded-full bg-[#ff9d3d] px-2 py-0.5 text-[9px] font-bold uppercase text-[#1a0900]">
+                  <span className="shrink-0 rounded-full bg-[#ff9d3d] px-2 py-0.5 text-[9px] font-bold uppercase text-[#08090a]">
                     Active
                   </span>
                 )}
               </div>
-              <p className="text-[11.5px] italic leading-snug text-[#e8b87a]">
+              <p className="text-[11.5px] italic leading-snug text-[#a8a9b0]">
                 &ldquo;Where the money go? Why dem dey act like na crime to ask?&rdquo;
               </p>
-              {/* Satirical Pidgin tagline */}
-              <p className="text-[10px] font-medium text-[#ff9d3d]/80 leading-tight">
+              <p className="text-[10px] font-medium text-[#ff9d3d] leading-tight">
                 Your oga can run. He no fit hide from ten questions.
               </p>
             </div>
